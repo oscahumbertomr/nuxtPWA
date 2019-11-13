@@ -41,10 +41,13 @@ export default {
     buildModules: [
         '@nuxtjs/vuetify',
     ],
+    axios: {
+    },
     /*
     ** Nuxt.js modules
     */
     modules: [
+        '@nuxtjs/axios',
         '@nuxtjs/pwa',
     ],
     /*
