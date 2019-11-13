@@ -1,22 +1,23 @@
 <template>
     <div>
-        <h1>Holi</h1>
-        <v-text-field placeholder="user id" v-on:keyup.enter="loadUser" v-model="id"></v-text-field>
-        <v-btn @click="loadUser">Load User</v-btn>
+        <v-text-field placeholder="Ingresa el Id" v-model="id" v-on:keyup.enter="sendId"></v-text-field>
     </div>
 </template>
 
 <script>
     export default {
         name: "index",
+        head:{
+            title:'users'
+        },
         data() {
             return {
                 id: null
             }
         },
         methods: {
-            loadUser() {
-                this.$router.push(`/users/${this.id}`);
+            sendId() {
+                this.$router.push(`users/${this.id}`);
             }
         },
     }

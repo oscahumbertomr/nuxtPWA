@@ -1,92 +1,67 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          PWA Nuxt Laravel
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
+    <v-row row grap>
+        <v-col cols="12" xs="11" sm="12" md="12">
+            <h1 class="display-1 font-weight-thin mb-4 text-center" >Progressive web app</h1>
+        </v-col>
+        <v-col cols="12" xs="11" sm="12" md="12">
+            <h4 class="subheading  text-center" >This page was made whit Nuxt, Vuetify and Laravel</h4>
+        </v-col>
+        <v-col xs="11" sm="12" md="12">
+            <v-parallax
+                    dark
+                    src="/waves.jpg"
             >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+                <v-row
+                        align="center"
+                        justify="center"
+                >
+                    <v-col class="text-center" cols="12" style="background-color: rgba(53,73,94,0.64)">
+                        <h1 class="display-1 font-weight-thin mb-4">PWA</h1>
+                        <h4 class="subheading">Nuxt
+                            <v-icon color="#222345">mdi-heart</v-icon>
+                            Vuetify
+                            <v-icon color="#222345">mdi-heart</v-icon>
+                            Laravel
+                        </h4>
+                    </v-col>
+                </v-row>
+            </v-parallax>
+        </v-col>
+        <v-col cols="12">
+            <h1 class="display-1 font-weight-thin mb-4 ">Nuxt:</h1>
+        </v-col>
+        <v-col cols="12">
+            <h4 class="subheading">Provides de PWA envirioment, do request to Apis and transforms Vue components into HTML ans Js implementing SSR tecnology</h4>
+        </v-col>
+        <v-col cols="12">
+            <h1 class="display-1 font-weight-thin mb-4 ">Vuetify:</h1>
+        </v-col>
+        <v-col cols="12">
+            <h4 class="subheading">Vuetify is a vuejs toolchaing framework, provides components such as buttons, card, v-paralax ... etc </h4>
+        </v-col>
+        <v-col cols="12">
+            <h1 class="display-1 font-weight-thin mb-4 ">Laravel:</h1>
+        </v-col>
+        <v-col cols="12">
+            <h4 class="subheading">Provides the backend solution, Laravel is a big framework whit a lot o tools ready to use</h4>
+        </v-col>
+
+        <v-col cols="12">
+            <h4 class="subheading">This progect still wroging</h4>
+        </v-col>
+
+    </v-row>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
-}
+
+    export default {
+        components: {
+
+        },
+        mounted() {
+            window.vm = this
+        }
+    }
 </script>
