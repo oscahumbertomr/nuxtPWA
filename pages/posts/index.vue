@@ -19,27 +19,27 @@
 <script>
 
     import Card from '@/components/Card.vue'
-
     export default {
         name: "index",
+        async asyncData(context) {
+            let {data} = await context.app.$axios.get('https://jsonplaceholder.typicode.com/todos')
+            context.store.dispatch('setPosts',data)
+        },
         head: {
             title: 'post mamalones'
         },
         components: {
             Card
         },
-        data() {
-            return {
-                posts: [],
-                overlay: false
+        computed: {
+            posts() {
+                return this.$store.getters.posts;
             }
         },
-        asyncData(context) {
-            return context.app.$axios.get('https://jsonplaceholder.typicode.com/todos').then(response => {
-                return {posts: response.data}
-            }).catch(error => {
-                console.log(error)
-            })
+        data() {
+            return {
+                overlay: false
+            }
         },
         methods: {},
         mounted() {
