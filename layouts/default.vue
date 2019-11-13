@@ -49,6 +49,12 @@
         <v-icon>mdi-minus</v-icon>
       </v-btn>
       <v-toolbar-title v-text="title" />
+      <v-btn text nuxt >
+        <nuxt-link to="/users">Users</nuxt-link>
+      </v-btn>
+      <v-btn text nuxt >
+        <nuxt-link to="/posts">Posts</nuxt-link>
+      </v-btn>
       <v-spacer />
       <v-btn
         icon
