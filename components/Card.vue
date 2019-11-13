@@ -1,10 +1,10 @@
 <template>
-    <v-card  nuxt>
+    <v-card  @click="toPostId">
         <v-card-title>
             Post {{post.id}}
         </v-card-title>
         <v-card-text>
-            <nuxt-link :to="`/posts/${post.id}`">{{post.title}}</nuxt-link>
+            {{post.title}}
         </v-card-text>
     </v-card>
 </template>
@@ -17,6 +17,11 @@
             post: {
                 type: Object
             },
+        },
+        methods: {
+            toPostId() {
+                this.$router.push(`/posts/${this.post.id}`)
+            }
         },
     }
 </script>
