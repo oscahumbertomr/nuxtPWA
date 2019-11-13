@@ -20,6 +20,7 @@
         },
         methods: {
             toPostId() {
+                this.$emit('overlay')
                 this.$router.push(`/posts/${this.post.id}`)
             }
         },
