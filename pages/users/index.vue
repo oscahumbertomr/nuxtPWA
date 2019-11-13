@@ -4,7 +4,7 @@
             <v-text-field label="User Id" placeholder="Type the user Id" v-model="id" v-on:keyup.enter="sendId"></v-text-field>
         </v-col>
         <v-col cols="3" md="2" lg="2">
-            <v-btn block color="indigo darken-4" :disabled="!id" @click="sendId">
+            <v-btn block color="indigo darken-4" :disabled="!id" @click="sendId" style="margin-top: 15px;">
                 Send
             </v-btn>
         </v-col>
