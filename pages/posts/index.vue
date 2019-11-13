@@ -4,7 +4,7 @@
             <h2>Makin API request - the Vue way</h2>
         </v-row>
         <v-row justify="space-between">
-            <v-col v-for="post in posts" :key="post.id"  cols="auto" md="3">
+            <v-col v-for="post in posts" :key="post.id"  cols="auto" xs="12" md="3">
                <Card :post="post"/>
             </v-col>
         </v-row>

@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <v-card
                 class="mx-auto"
                 color="#26c6da"
@@ -24,12 +23,9 @@
 
             <v-card-actions>
                 <v-list-item class="grow">
-
-
                     <v-row
                             align="center"
                             justify="end"
-
                     >
                         <v-btn text @click="$router.back()">
                             <v-icon class="mr-1">mdi-keyboard-return</v-icon>
