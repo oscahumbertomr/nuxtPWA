@@ -25,7 +25,13 @@ export default {
     /*
     ** Global CSS
     */
-    css: [],
+    css: [
+        '@/assets/styles/mian.css'
+    ],
+    transition: {
+      name: 'component-fade',
+      mode: 'out-in'
+    },
     /*
     ** Plugins to load before mounting the App
     */

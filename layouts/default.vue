@@ -73,22 +73,22 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home-outline',
+          title: 'Home  ',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-emoticon-happy-outline',
           title: 'Inspire',
           to: '/inspire'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-application',
           title: 'Posts',
           to: '/posts'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-application',
           title: 'Users',
           to: '/users'
         }
