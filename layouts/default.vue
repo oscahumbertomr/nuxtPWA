@@ -91,6 +91,11 @@ export default {
           icon: 'mdi-application',
           title: 'Users',
           to: '/users'
+        },
+        {
+          icon: 'mdi-application',
+          title: 'Heroku',
+          to: '/heroku'
         }
       ],
       miniVariant: false,
