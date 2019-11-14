@@ -48,12 +48,21 @@ export default {
         '@nuxtjs/vuetify',
     ],
     axios: {
+        baseURL : "https://ingoscar-pwa.netlify.com/",
+    },
+    auth: {
+        endpoints: {
+            login: { url: '/api/auth/login', method: 'post', propertyName: 'meta.token' },
+            logout: { url: '/api/auth/logout', method: 'post' },
+            user: { url: '/api/auth/user', method: 'get', propertyName: 'data' }
+        },
     },
     /*
     ** Nuxt.js modules
     */
     modules: [
         '@nuxtjs/axios',
+        '@nuxtjs/auth',
         '@nuxtjs/pwa',
     ],
     /*
@@ -92,9 +101,9 @@ export default {
         manifest: {
             display: 'standalone',
             start_url: '/',
-            name:'laravel Nuxt',
-            short_name:'LN',
-            description: 'testing laravel whit nuxtJs',
+            name:'ingOscarPWA',
+            short_name:'pwaOscar',
+            description: 'testing laravel whit nuxtJs on PWA',
             orientation: 'portrait',
             lang: 'en',
 
