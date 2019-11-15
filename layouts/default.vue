@@ -85,6 +85,11 @@
         >
             <span>&copy; 2019</span>
         </v-footer>
+        <v-overlay :value="overlay" opacity="0.8" absolute z-index="500">
+            <span class="custom-loader-cached">
+                <v-icon light color="#ffffff" x-large>mdi-cached</v-icon>
+            </span>
+        </v-overlay>
 
     </v-app>
 </template>
@@ -98,6 +103,7 @@
         },
         data() {
             return {
+                overlay: false,
                 clipped: false,
                 drawer: false,
                 fixed: false,
@@ -158,6 +164,60 @@
             },
         },
         mounted() {
+            this.$axios.onRequest(rquest=>{
+                this.$nuxt.$loading.start();
+                this.overlay = true
+            });
+            this.$axios.onResponse(response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
+            });
         }
     }
 </script>
+<style scoped>
+    .custom-loader-cached {
+        animation: loader 1s infinite;
+        display: flex;
+        margin-top: 50vh;
+    }
+    .v-overlay{
+        align-items: end !important;
+    }
+
+    @-moz-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-o-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>

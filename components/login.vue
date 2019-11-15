@@ -2,6 +2,7 @@
     <v-dialog
             v-model="modalLoginStatus"
             width="400"
+            :persistent="loading"
     >
         <v-card width="400" class="mx-auto mt-5">
             <v-card-title class="pb-0">
@@ -10,13 +11,15 @@
             <v-card-text>
                 <v-form>
                     <v-text-field
-                            label="Email or username"
-                            v-model="username"
+                            label="Email"
+                            :disabled="loading"
+                            v-model="email"
                             prepend-icon="mdi-account-circle"
                     />
                     <v-text-field
                             :type="showPassword ? 'text' : 'password'"
                             label="Password"
+                            :disabled="loading"
                             v-model="password"
                             prepend-icon="mdi-lock"
                             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
@@ -26,8 +29,8 @@
             </v-card-text>
             <v-divider></v-divider>
             <v-card-actions>
-                <v-btn color="success" @click="registerUser">Register?</v-btn>
-                <v-btn color="info">Login</v-btn>
+                <!--                <v-btn color="success" @click="registerUser">Register?</v-btn>-->
+                <v-btn color="info" :loading="loading" @click="login" block>Login</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -39,20 +42,41 @@
         data() {
             return {
                 showPassword: false,
-                username: null,
-                password:null,
+                email: null,
+                password: null,
+                loading:false
             }
         },
         methods: {
-            registerUser() {
+            login() {
+                this.loading = true
                 this.$auth.loginWith(
-                    "local",{
+                    "local", {
                         data: {
-                            email :this.username,
+                            email: this.email,
                             password: this.password
                         }
                     }
-                )
+                ).then(response => {
+                    console.log('nani?')
+                        this.modalLoginStatus = false
+                    }
+                ).catch(
+
+                ).finally(f=>{
+                    this.loading = false
+                })
+            },
+            registerUser() {
+               /* this.$auth.registerStrategy(
+                    "local", {
+                        data: {
+                            email: this.email,
+                            name: 'ingOscar',
+                            password: this.password
+                        }
+                    }
+                )*/
             }
         },
         computed: {
@@ -69,6 +93,7 @@
             }
         },
         mounted() {
+            console.log('mounted')
             window.vm = this
         }
 
