@@ -164,30 +164,31 @@
             },
         },
         mounted() {
-            this.$axios.onRequest(rquest=>{
-                this.$nuxt.$loading.start();
-                this.overlay = true
+            let vm = this;
+            vm.$axios.onRequest(rquest=>{
+                vm.$nuxt.$loading.start();
+                vm.overlay = true
             });
-            this.$axios.onResponseError(
+            vm.$axios.onResponseError(
             ) (response=>{
-                this.overlay = false
-                this.$nuxt.$loading.finish();
+                vm.overlay = false
+                vm.$nuxt.$loading.finish();
             });
 
-            this.$axios.onResponse(
+            vm.$axios.onResponse(
             ) (response=>{
-                this.overlay = false
-                this.$nuxt.$loading.finish();
+                vm.overlay = false
+                vm.$nuxt.$loading.finish();
             });
-            this.$axios.onError(
+            vm.$axios.onError(
             ) (response=>{
-                this.overlay = false
-                this.$nuxt.$loading.finish();
+                vm.overlay = false
+                vm.$nuxt.$loading.finish();
             });
-            this.$axios.onRequest(
+            vm.$axios.onRequest(
             ) (response=>{
-                this.overlay = false
-                this.$nuxt.$loading.finish();
+                vm.overlay = false
+                vm.$nuxt.$loading.finish();
             });
         }
     }
