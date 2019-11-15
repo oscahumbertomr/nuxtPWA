@@ -29,8 +29,8 @@ export default {
         '@/assets/styles/mian.css'
     ],
     transition: {
-      name: 'component-fade',
-      mode: 'out-in'
+        name: 'component-fade',
+        mode: 'out-in'
     },
     /*
     ** Plugins to load before mounting the App
@@ -48,14 +48,19 @@ export default {
         '@nuxtjs/vuetify',
     ],
     axios: {
-        baseURL : "https://ingoscar-pwa.netlify.com/",
+        baseURL: "http://localhost:8000/",
     },
     auth: {
-        endpoints: {
-            login: { url: '/api/auth/login', method: 'post', propertyName: 'meta.token' },
-            logout: { url: '/api/auth/logout', method: 'post' },
-            user: { url: '/api/auth/user', method: 'get', propertyName: 'data' }
-        },
+        strategies: {
+            local: {
+                endpoints: {
+                    login: {url: '/api/auth/login', method: 'post', propertyName: 'meta.token'},
+                    logout: {url: '/api/auth/logout', method: 'post'},
+                    user: {url: '/api/auth/user', method: 'get', propertyName: 'data'}
+                },
+            }
+        }
+
     },
     /*
     ** Nuxt.js modules
@@ -101,8 +106,8 @@ export default {
         manifest: {
             display: 'standalone',
             start_url: '/',
-            name:'ingOscarPWA',
-            short_name:'pwaOscar',
+            name: 'ingOscarPWA',
+            short_name: 'pwaOscar',
             description: 'testing laravel whit nuxtJs on PWA',
             orientation: 'portrait',
             lang: 'en',
@@ -114,24 +119,24 @@ export default {
                     urlPattern: 'https://fonts.googleapis.com/.*',
                     handler: 'cacheFirst',
                     method: 'GET',
-                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
                 },
                 {
                     urlPattern: 'https://fonts.gstatic.com/.*',
                     handler: 'cacheFirst',
                     method: 'GET',
-                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
                 },
                 {
                     urlPattern: 'https://cdn.snipcart.com/.*',
                     method: 'GET',
-                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
                 },
                 {
                     urlPattern: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
                     handler: 'cacheFirst',
                     method: 'GET',
-                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
                 }
             ]
         }
