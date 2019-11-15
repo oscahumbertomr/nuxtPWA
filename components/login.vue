@@ -14,9 +14,11 @@
                             label="Email"
                             :disabled="loading"
                             v-model="email"
+                            v-on:keyup.enter="login"
                             prepend-icon="mdi-account-circle"
                     />
                     <v-text-field
+                            v-on:keyup.enter="login"
                             :type="showPassword ? 'text' : 'password'"
                             label="Password"
                             :disabled="loading"
