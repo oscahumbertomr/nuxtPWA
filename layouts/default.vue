@@ -173,6 +173,22 @@
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
+
+            this.$axios.onResponse(
+            ) (response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
+            });
+            this.$axios.onError(
+            ) (response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
+            });
+            this.$axios.onRequest(
+            ) (response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
+            });
         }
     }
 </script>
