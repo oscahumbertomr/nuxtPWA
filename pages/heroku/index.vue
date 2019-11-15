@@ -34,15 +34,18 @@
         },
         methods: {
             testHerokuApi() {
-                this.$axios.get('https://nuxt-pwa-oscar.herokuapp.com/api/test').then(response => {
+                // this.$axios.get('https://nuxt-pwa-oscar.herokuapp.com/api/test').then(response => {
+                this.$axios.get('http://localhost:8000/api/test').then(response => {
                     console.log(response)
                     this.test = response.data
                 });
             }
         },
         mounted() {
+            console.log('mounted herku')
             this.testHerokuApi()
-        }
+        },
+
     }
 </script>
 

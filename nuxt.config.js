@@ -41,9 +41,9 @@ export default {
             ssr: false
         },
         {
-            src: '~/plugins/fbSdk.js',
+            src: '~/plugins/axiosConfig.js',
             ssr: false
-        }
+        },
     ],
     /*
     ** Nuxt.js dev-modules
@@ -56,6 +56,7 @@ export default {
         // baseURL: "https://nuxt-pwa-oscar.herokuapp.com/",
     },
     auth: {
+        redirect:false,
         strategies: {
             local: {
                 endpoints: {

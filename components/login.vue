@@ -5,7 +5,7 @@
             :persistent="loading"
     >
         <v-card width="400" class="mx-auto mt-5">
-            <v-card-title >
+            <v-card-title>
                 <h1>Login</h1>
             </v-card-title>
             <v-card-text>
@@ -21,6 +21,7 @@
                             v-on:keyup.enter="login"
                             :type="showPassword ? 'text' : 'password'"
                             label="Password"
+                            autocomplete="new-password"
                             :disabled="loading"
                             v-model="password"
                             prepend-icon="mdi-lock"
@@ -46,7 +47,7 @@
                 showPassword: false,
                 email: null,
                 password: null,
-                loading:false
+                loading: false
             }
         },
         methods: {
@@ -60,25 +61,31 @@
                         }
                     }
                 ).then(response => {
-                    console.log('nani?')
-                        this.modalLoginStatus = false
+                        this.modalLoginStatus = false;
+                        this.password = null;
+                        if (this.urlTriedToVisit) {
+                            let url = this.urlTriedToVisit;
+                            this.urlTriedToVisit = null;
+                            this.$router.push(url);
+                        }
+
                     }
                 ).catch(
 
-                ).finally(f=>{
+                ).finally(f => {
                     this.loading = false
                 })
             },
             registerUser() {
-               /* this.$auth.registerStrategy(
-                    "local", {
-                        data: {
-                            email: this.email,
-                            name: 'ingOscar',
-                            password: this.password
-                        }
-                    }
-                )*/
+                /* this.$auth.registerStrategy(
+                     "local", {
+                         data: {
+                             email: this.email,
+                             name: 'ingOscar',
+                             password: this.password
+                         }
+                     }
+                 )*/
             }
         },
         computed: {
@@ -90,12 +97,20 @@
                     this.$store.dispatch('setModalLoginStatus', modalStatus)
                 }
             },
+            urlTriedToVisit: {
+                get() {
+                    return this.$store.state.urlTriedToVisit;
+                },
+                set(urlTriedToVisit) {
+                    this.$store.dispatch('setUrlTriedToVisit', urlTriedToVisit)
+                }
+            },
             posts() {
                 return this.$store.getters.posts;
             }
         },
         mounted() {
-            console.log('mounted')
+            console.log('mounted login')
         }
 
     }

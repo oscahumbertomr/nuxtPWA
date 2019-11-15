@@ -11,8 +11,7 @@
                 <v-list-item
                         v-for="(item, i) in items"
                         :key="i"
-                        :to="item.to"
-                        router
+                        @click="toUrl(item)"
                         exact
                 >
                     <v-list-item-action>
@@ -121,7 +120,8 @@
                     {
                         icon: 'mdi-application',
                         title: 'Posts',
-                        to: '/posts'
+                        to: '/posts',
+                        shouldLoged:true
                     },
                     {
                         icon: 'mdi-application',
@@ -131,7 +131,7 @@
                     {
                         icon: 'mdi-application',
                         title: 'Heroku',
-                        to: '/heroku'
+                        to: '/heroku',
                     }
                 ],
                 miniVariant: false,
@@ -141,11 +141,29 @@
             }
         },
         methods: {
+            toUrl(item) {
+                if (item.shouldLoged && !this.userInfo) {
+                    this.modalLoginStatus = true
+                    this.urlTriedToVisit = item.to
+                } else {
+                    this.$router.push(item.to)
+                }
+            },
             logOut() {
-                this.$auth.logout();
+                this.$auth.logout().then(response=>{
+                    this.$router.push('/')
+                });
             },
         },
         computed: {
+            urlTriedToVisit: {
+                get() {
+                    return this.$store.state.urlTriedToVisit;
+                },
+                set(urlTriedToVisit) {
+                    this.$store.dispatch('setUrlTriedToVisit', urlTriedToVisit)
+                }
+            },
             modalLoginStatus: {
                 get() {
                     return this.$store.getters.modalLoginStatus;
@@ -164,25 +182,32 @@
             },
         },
         mounted() {
-
-            this.$axios.onRequest(rquest=>{
+            window.vm = this
+            console.log('mounted default')
+            this.$axios.onRequest(rquest => {
                 this.$nuxt.$loading.start();
                 this.overlay = true
             });
 
-            this.$axios.onResponse(response=>{
+            this.$axios.onResponse(response => {
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
-            this.$axios.onError(response=>{
+            this.$axios.onError(response => {
+                console.log('??????????? 11')
+                window.aok1 = response.data
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
-            this.$axios.onRequestError(response=>{
+            this.$axios.onRequestError(response => {
+                console.log('??????????? 22')
+                window.aok2 = response.data
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
-            this.$axios.onResponseError(response=>{
+            this.$axios.onResponseError(response => {
+                console.log('??????????? 3')
+                window.aok3 = response.data
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
@@ -196,7 +221,8 @@
         display: flex;
         margin-top: 50vh;
     }
-    .v-overlay{
+
+    .v-overlay {
         align-items: end !important;
     }
 
