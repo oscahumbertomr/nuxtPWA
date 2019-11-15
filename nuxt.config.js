@@ -48,7 +48,7 @@ export default {
         '@nuxtjs/vuetify',
     ],
     axios: {
-        baseURL: "http://localhost:8000/",
+        baseURL: "https://nuxt-pwa-oscar.herokuapp.com/",
     },
     auth: {
         strategies: {
