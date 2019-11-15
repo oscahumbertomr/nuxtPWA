@@ -164,32 +164,29 @@
             },
         },
         mounted() {
-            let vm = this;
-            vm.$axios.onRequest(rquest=>{
-                vm.$nuxt.$loading.start();
-                vm.overlay = true
-            });
-            vm.$axios.onResponseError(
-            ) (response=>{
-                vm.overlay = false
-                vm.$nuxt.$loading.finish();
+
+            this.$axios.onRequest(rquest=>{
+                this.$nuxt.$loading.start();
+                this.overlay = true
             });
 
-            vm.$axios.onResponse(
-            ) (response=>{
-                vm.overlay = false
-                vm.$nuxt.$loading.finish();
+            this.$axios.onResponse(response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
             });
-            vm.$axios.onError(
-            ) (response=>{
-                vm.overlay = false
-                vm.$nuxt.$loading.finish();
+            this.$axios.onError(response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
             });
-            vm.$axios.onRequest(
-            ) (response=>{
-                vm.overlay = false
-                vm.$nuxt.$loading.finish();
+            this.$axios.onRequestError(response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
             });
+            this.$axios.onResponseError(response=>{
+                this.overlay = false
+                this.$nuxt.$loading.finish();
+            });
+
         }
     }
 </script>
