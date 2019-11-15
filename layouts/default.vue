@@ -168,7 +168,8 @@
                 this.$nuxt.$loading.start();
                 this.overlay = true
             });
-            this.$axios.onResponse(response=>{
+            this.$axios.onResponseError(
+            ) (response=>{
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });

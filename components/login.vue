@@ -94,7 +94,6 @@
         },
         mounted() {
             console.log('mounted')
-            window.vm = this
         }
 
     }
