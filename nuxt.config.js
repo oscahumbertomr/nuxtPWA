@@ -39,6 +39,10 @@ export default {
         {
             src: '~/plugins/sw.js',
             ssr: false
+        },
+        {
+            src: '~/plugins/fbSdk.js',
+            ssr: false
         }
     ],
     /*
@@ -48,7 +52,8 @@ export default {
         '@nuxtjs/vuetify',
     ],
     axios: {
-        baseURL: "https://nuxt-pwa-oscar.herokuapp.com/",
+        baseURL: "http://localhost:8000/",
+        // baseURL: "https://nuxt-pwa-oscar.herokuapp.com/",
     },
     auth: {
         strategies: {

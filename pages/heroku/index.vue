@@ -1,5 +1,5 @@
 <template>
-    <v-div>
+    <div>
         <v-row>
             <v-col cols="12">
                 <h1>Heroku test:</h1>
@@ -21,7 +21,7 @@
                 ></v-skeleton-loader>
             </v-col>
         </v-row>
-    </v-div>
+    </div>
 </template>
 
 <script>
