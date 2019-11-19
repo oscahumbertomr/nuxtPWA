@@ -63,7 +63,10 @@
                 ).then(response => {
                         this.modalLoginStatus = false;
                         this.password = null;
-                        if (this.urlTriedToVisit) {
+                        if (this.urlTriedToVisit && this.$route.path == this.urlTriedToVisit) {
+                            this.$router.go()
+
+                        } else if(this.urlTriedToVisit ){
                             let url = this.urlTriedToVisit;
                             this.urlTriedToVisit = null;
                             this.$router.push(url);

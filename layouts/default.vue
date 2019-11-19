@@ -183,7 +183,6 @@
         },
         mounted() {
             window.vm = this
-            console.log('mounted default')
             this.$axios.onRequest(rquest => {
                 this.$nuxt.$loading.start();
                 this.overlay = true
@@ -193,72 +192,24 @@
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
-            this.$axios.onError(response => {
-                console.log('??????????? 11')
-                window.aok1 = response.data
+            this.$axios.onError(error => {
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
-            this.$axios.onRequestError(response => {
-                console.log('??????????? 22')
-                window.aok2 = response.data
+            this.$axios.onRequestError(error => {
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
-            this.$axios.onResponseError(response => {
-                console.log('??????????? 3')
-                window.aok3 = response.data
+            this.$axios.onResponseError(error => {
                 this.overlay = false
                 this.$nuxt.$loading.finish();
+                const code = parseInt(error.response && error.response.status)
+                if (code === 401) {
+                    vm.urlTriedToVisit = vm.$route.path
+                    vm.modalLoginStatus = true
+                }
             });
 
         }
     }
 </script>
-<style scoped>
-    .custom-loader-cached {
-        animation: loader 1s infinite;
-        display: flex;
-        margin-top: 50vh;
-    }
-
-    .v-overlay {
-        align-items: end !important;
-    }
-
-    @-moz-keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @-webkit-keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @-o-keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-</style>

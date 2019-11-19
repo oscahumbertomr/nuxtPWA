@@ -1,14 +1,15 @@
-export default function ({ $axios, redirect, store }) {
+export default function ({ $axios, redirect, store,route }) {
 
-    console.log('axios plugin')
-    $axios.onResponseError(response => {
-        console.log('onResponseError plugin')
-        const code = parseInt(response.response && response.response.status)
-        console.log(response)
-        window.erplug = response
+    $axios.onResponseError(error => {
+        const code = parseInt(error.response && error.response.status)
+        // console.log(error)
+        window.erplug = error
         if (code === 401) {
+            // urlTriedToVisit = item.to
             console.log(store.state.modalLoginStatus)
-            redirect('/401')
+            store.dispatch('setUrlTriedToVisit', route.path)
+            store.dispatch('setModalLoginStatus', true)
+            // redirect('/401')
         }
     })
 }

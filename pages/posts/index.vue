@@ -8,11 +8,6 @@
                 <Card :post="post" @overlay="overlay=true"/>
             </v-col>
         </v-row>
-        <v-overlay :value="overlay" opacity="0.8" absolute>
-            <span class="custom-loader-cached">
-                <v-icon light color="#ffffff" x-large>mdi-cached</v-icon>
-            </span>
-        </v-overlay>
     </div>
 </template>
 
