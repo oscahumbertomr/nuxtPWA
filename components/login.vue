@@ -113,7 +113,6 @@
             }
         },
         mounted() {
-            console.log('mounted login')
         }
 
     }

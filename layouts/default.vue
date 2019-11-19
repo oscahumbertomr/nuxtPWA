@@ -31,11 +31,11 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
             <v-toolbar-title v-text="title"/>
             <v-spacer/>
-            <v-menu bottom offset-y v-if="userInfo">
+            <v-menu bottom offset-y v-if="authenticated">
                 <template v-slot:activator="{ on }">
                     <v-btn text v-on="on">
                         <v-icon left>mdi-account</v-icon>
-                        {{userInfo}}
+                        {{user.name}}
                         <v-icon right>mdi-dots-vertical</v-icon>
                     </v-btn>
                 </template>
@@ -170,14 +170,6 @@
                 },
                 set(modalStatus) {
                     this.$store.dispatch('setModalLoginStatus', modalStatus)
-                }
-            },
-            userInfo() {
-                let auth = this.$store.state.auth;
-                if (auth && auth.user && auth.user.name) {
-                    return auth.user.name
-                } else {
-                    return false
                 }
             },
         },

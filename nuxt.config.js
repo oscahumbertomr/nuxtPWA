@@ -44,6 +44,11 @@ export default {
             src: '~/plugins/axiosConfig.js',
             ssr: false
         },
+        '~/plugins/mixins/userPlugin.js'
+       /* {
+            src: '~/plugins/mixins/userPlugin.js',
+            ssr: true
+        },*/
     ],
     /*
     ** Nuxt.js dev-modules
