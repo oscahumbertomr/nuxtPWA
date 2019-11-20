@@ -29,7 +29,7 @@
                         Address:
                     </v-col>
                     <v-col cols="12" class="pt-0">
-                        Merida, Yucatan, Mexico
+                        Mérida, Yucatán, México
                     </v-col>
                 </v-col>
 
