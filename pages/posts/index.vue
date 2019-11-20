@@ -21,7 +21,7 @@
             context.store.dispatch('setPosts',data)
         },
         head: {
-            title: 'post mamalones'
+            title: 'post example'
         },
         components: {
             Card
