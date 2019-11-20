@@ -8,12 +8,13 @@
                             src="/oscar.png"
                             max-height="100%"
                             width="50%"
+                            min-height="180px"
                             gradient="to top, rgba(0, 0, 0, 0.4) 20%, transparent 100px"
                             style="margin-left: auto;margin-right: auto;"
                     >
                     </v-img>
                 </v-col>
-                <v-col cols="12" sm="6" md="12">
+                <v-col cols="12" sm="6" md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-account</v-icon>
                         Name:
@@ -23,7 +24,7 @@
                     </v-col>
                 </v-col>
 
-                <v-col cols="12" sm="6" md="12">
+                <v-col cols="12" sm="6" md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-map-marker</v-icon>
                         Address:
@@ -33,7 +34,7 @@
                     </v-col>
                 </v-col>
 
-                <v-col cols="12" sm="6" md="12">
+                <v-col cols="12" sm="6" md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-phone</v-icon>
                         Number Phone:
@@ -42,7 +43,7 @@
                         (+52) 999-130-1364
                     </v-col>
                 </v-col>
-                <v-col cols="12" sm="6" md="12">
+                <v-col cols="12" sm="6" md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-school</v-icon>
                         Education:
@@ -51,7 +52,7 @@
                         Mechatronics Engineer (2012-2016)
                     </v-col>
                 </v-col>
-                <v-col cols="12"  md="12">
+                <v-col cols="12"  md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-translate</v-icon>
                         Languages:
@@ -93,13 +94,13 @@
         </v-col>
         <v-col cols="12" md="7">
             <v-row cols="12">
-                <v-card>
+                <v-card >
                     <v-card-title style="background-color:#EF5350">
                         <h1 class="headline mx-auto">Main programming languages</h1>
                     </v-card-title>
-                    <v-card-text>
-                        <v-row>
-                            <v-col cols="12" sm="6" class="py-0">
+                    <v-card-text  >
+                        <v-row >
+                            <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-language-php</v-icon>
                                     Php
@@ -119,7 +120,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0" data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-language-javascript</v-icon>
                                     Javascript
@@ -139,7 +140,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0" data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon>mdi-database</v-icon>
                                     SQL
@@ -166,7 +167,7 @@
                     </v-card-title>
                     <v-card-text>
                         <v-row>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-laravel</v-icon>
                                     Laravel
@@ -186,7 +187,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-symfony</v-icon>
                                     Symfony
@@ -206,7 +207,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-vuejs</v-icon>
                                     VueJs
@@ -226,7 +227,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-nuxt</v-icon>
                                     NuxtJs
@@ -253,7 +254,7 @@
                     </v-card-title>
                     <v-card-text>
                         <v-row>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-language-python</v-icon>
                                     Python
@@ -274,7 +275,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-language-lua</v-icon>
                                     Lua
@@ -294,7 +295,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-chip</v-icon>
                                     Arduino
@@ -314,7 +315,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-chip</v-icon>
                                     Ladder (PLC)
@@ -342,7 +343,7 @@
                     </v-card-title>
                     <v-card-text>
                         <v-row>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-flash</v-icon>
                                     Electronic
@@ -362,7 +363,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-chip</v-icon>
                                     Microcontrollers
@@ -382,7 +383,7 @@
                                     ></v-rating>
                                 </v-col>
                             </v-col>
-                            <v-col cols="12" sm="6"  class="py-0">
+                            <v-col cols="12" sm="6"  class="py-0"  data-aos="fade-right">
                                 <v-col class="pb-0" cols="12">
                                     <v-icon left>mdi-server-network</v-icon>
                                     AWS and Linux
