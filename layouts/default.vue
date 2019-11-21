@@ -210,3 +210,51 @@
         }
     }
 </script>
+<style scoped>
+    .custom-loader-cached {
+        animation: loader 1s infinite;
+        display: flex;
+        margin-top: 50vh;
+    }
+
+    .v-overlay {
+        align-items: end !important;
+    }
+
+    @-moz-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-o-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
