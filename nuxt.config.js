@@ -52,7 +52,8 @@ export default {
         '@nuxtjs/vuetify',
     ],
     axios: {
-        baseURL: "http://localhost:8000/",
+        baseURL: process.env.NODE_ENV == 'production' ? "https://nuxt-pwa-oscar.herokuapp.com/api/" : 'http://localhost:8000/api/' ,
+        // baseURL: "http://localhost:8000/",
         // baseURL: "https://nuxt-pwa-oscar.herokuapp.com/",
     },
     auth: {
@@ -60,9 +61,9 @@ export default {
         strategies: {
             local: {
                 endpoints: {
-                    login: {url: '/api/auth/login', method: 'post', propertyName: 'meta.token'},
-                    logout: {url: '/api/auth/logout', method: 'post'},
-                    user: {url: '/api/auth/user', method: 'get', propertyName: 'data'}
+                    login: {url: 'auth/login', method: 'post', propertyName: 'meta.token'},
+                    logout: {url: 'auth/logout', method: 'post'},
+                    user: {url: 'auth/user', method: 'get', propertyName: 'data'}
                 },
             }
         }

@@ -56,7 +56,7 @@
             </v-btn>
         </v-app-bar>
         <v-content>
-            <login/>
+            <LoginComponent/>
             <v-container>
                 <nuxt/>
             </v-container>
@@ -94,11 +94,12 @@
 </template>
 
 <script>
-    import login from '@/components/login.vue';
+    import LoginComponent from '@/components/LoginComponent.vue';
 
     export default {
         components: {
-            login
+            LoginComponent,
+
         },
         data() {
             return {
@@ -121,7 +122,7 @@
                         icon: 'mdi-application',
                         title: 'Posts',
                         to: '/posts',
-                        shouldLoged:true
+                        shouldLoged: true
                     },
                     {
                         icon: 'mdi-application',
@@ -150,7 +151,7 @@
                 }
             },
             logOut() {
-                this.$auth.logout().then(response=>{
+                this.$auth.logout().then(response => {
                     this.$router.push('/')
                 });
             },
@@ -183,7 +184,6 @@
         },
         mounted() {
             window.vm = this
-            console.log('mounted default')
             this.$axios.onRequest(rquest => {
                 this.$nuxt.$loading.start();
                 this.overlay = true
@@ -194,20 +194,14 @@
                 this.$nuxt.$loading.finish();
             });
             this.$axios.onError(response => {
-                console.log('??????????? 11')
-                window.aok1 = response.data
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
             this.$axios.onRequestError(response => {
-                console.log('??????????? 22')
-                window.aok2 = response.data
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
             this.$axios.onResponseError(response => {
-                console.log('??????????? 3')
-                window.aok3 = response.data
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
