@@ -31,11 +31,11 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
             <v-toolbar-title v-text="title"/>
             <v-spacer/>
-            <v-menu bottom offset-y v-if="userInfo">
+            <v-menu bottom offset-y v-if="authenticated">
                 <template v-slot:activator="{ on }">
                     <v-btn text v-on="on">
                         <v-icon left>mdi-account</v-icon>
-                        {{userInfo}}
+                        {{user.name}}
                         <v-icon right>mdi-dots-vertical</v-icon>
                     </v-btn>
                 </template>
@@ -173,14 +173,6 @@
                     this.$store.dispatch('setModalLoginStatus', modalStatus)
                 }
             },
-            userInfo() {
-                let auth = this.$store.state.auth;
-                if (auth && auth.user && auth.user.name) {
-                    return auth.user.name
-                } else {
-                    return false
-                }
-            },
         },
         mounted() {
             window.vm = this
@@ -193,6 +185,7 @@
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
+
             this.$axios.onError(response => {
                 this.overlay = false
                 this.$nuxt.$loading.finish();
@@ -204,55 +197,13 @@
             this.$axios.onResponseError(response => {
                 this.overlay = false
                 this.$nuxt.$loading.finish();
+                const code = parseInt(error.response && error.response.status)
+                if (code === 401) {
+                    vm.urlTriedToVisit = vm.$route.path
+                    vm.modalLoginStatus = true
+                }
             });
 
         }
     }
 </script>
-<style scoped>
-    .custom-loader-cached {
-        animation: loader 1s infinite;
-        display: flex;
-        margin-top: 50vh;
-    }
-
-    .v-overlay {
-        align-items: end !important;
-    }
-
-    @-moz-keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @-webkit-keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @-o-keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes loader {
-        from {
-            transform: rotate(0);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-</style>
