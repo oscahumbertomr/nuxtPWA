@@ -146,7 +146,7 @@
         },
         methods: {
             toUrl(item) {
-                if (item.shouldLoged && !this.userInfo) {
+                if (item.shouldLoged && !this.authenticated) {
                     this.modalLoginStatus = true
                     this.urlTriedToVisit = item.to
                 } else {
