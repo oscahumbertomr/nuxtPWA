@@ -9,7 +9,7 @@
                             max-height="100%"
                             width="50%"
                             min-height="180px"
-                            gradient="to top, rgba(0, 0, 0, 0.4) 20%, transparent 100px"
+                            gradient="to top, rgba(0, 0, 0, 0.4) 10%, transparent 100px"
                             style="margin-left: auto;margin-right: auto;"
                     >
                     </v-img>
@@ -21,6 +21,15 @@
                     </v-col>
                     <v-col cols="12" class="pt-0">
                         Oscar Humberto Montejo Rodriguez
+                    </v-col>
+                </v-col>
+                <v-col cols="12" sm="6" md="12" class="py-0">
+                    <v-col cols="12" class="pb-0">
+                        <v-icon left>mdi-account-clock</v-icon>
+                        Age:
+                    </v-col>
+                    <v-col cols="12" class="pt-0">
+                        27 years old
                     </v-col>
                 </v-col>
 
