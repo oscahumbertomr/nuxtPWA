@@ -89,7 +89,6 @@
                 <v-icon light color="#ffffff" x-large>mdi-cached</v-icon>
             </span>
         </v-overlay>
-
     </v-app>
 </template>
 
@@ -133,6 +132,11 @@
                         icon: 'mdi-application',
                         title: 'Heroku',
                         to: '/heroku',
+                    },
+                    {
+                        icon: 'mdi-heart',
+                        title: 'About Developer',
+                        to: '/aboutDeveloper',
                     }
                 ],
                 miniVariant: false,
