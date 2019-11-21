@@ -95,7 +95,7 @@
             },
             login() {
                 this.emailRules = this.emailFormatRules
-                setTimeout(()=>{
+                setTimeout(() => {
                     if (this.$refs.form.validate()) {
                         this.loading = true
                         this.$auth.loginWith(
@@ -108,7 +108,10 @@
                         ).then(response => {
                                 this.modalLoginStatus = false;
                                 this.password = null;
-                                if (this.urlTriedToVisit) {
+                                if (this.urlTriedToVisit && this.$route.path == this.urlTriedToVisit) {
+                                    this.$router.go()
+
+                                } else if (this.urlTriedToVisit) {
                                     let url = this.urlTriedToVisit;
                                     this.urlTriedToVisit = null;
                                     this.$router.push(url);
@@ -125,7 +128,7 @@
                             this.loading = false
                         })
                     }
-                },200)
+                }, 200)
             },
             registerUser() {
                 /* this.$auth.registerStrategy(

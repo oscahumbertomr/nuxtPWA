@@ -19,22 +19,22 @@
                         <v-icon left>mdi-account</v-icon>
                         Name:
                     </v-col>
-                    <no-ssr>
+                    <client-only>
                         <v-col cols="12" class="pt-0" data-aos="fade-right">
                             Oscar Humberto Montejo Rodriguez
                         </v-col>
-                    </no-ssr>
+                    </client-only>
                 </v-col>
                 <v-col cols="12" sm="6" md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-account-clock</v-icon>
                         Age:
                     </v-col>
-                    <no-ssr>
+                    <client-only>
                         <v-col cols="12" class="pt-0" data-aos="fade-right">
                             27 years old
                         </v-col>
-                    </no-ssr>
+                    </client-only>
                 </v-col>
 
                 <v-col cols="12" sm="6" md="12" class="py-0">
@@ -42,11 +42,11 @@
                         <v-icon left>mdi-map-marker</v-icon>
                         Address:
                     </v-col>
-                    <no-ssr>
+                    <client-only>
                         <v-col cols="12" class="pt-0" data-aos="fade-right">
                             Mérida, Yucatán, México
                         </v-col>
-                    </no-ssr>
+                    </client-only>
                 </v-col>
 
                 <v-col cols="12" sm="6" md="12" class="py-0">
@@ -54,29 +54,29 @@
                         <v-icon left>mdi-phone</v-icon>
                         Number Phone:
                     </v-col>
-                    <no-ssr>
+                    <client-only>
                         <v-col cols="12" class="pt-0" data-aos="fade-right">
                             (+52) 999-130-1364
                         </v-col>
-                    </no-ssr>
+                    </client-only>
                 </v-col>
                 <v-col cols="12" sm="6" md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-school</v-icon>
                         Education:
                     </v-col>
-                    <no-ssr>
+                    <client-only>
                         <v-col cols="12" class="pt-0" data-aos="fade-right">
                             Mechatronics Engineer (2012-2016)
                         </v-col>
-                    </no-ssr>
+                    </client-only>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
                     <v-col cols="12" class="pb-0">
                         <v-icon left>mdi-translate</v-icon>
                         Languages:
                     </v-col>
-                    <no-ssr>
+                    <client-only>
                         <v-col cols="12" class="pt-0" data-aos="fade-right">
                             <v-row>
                                 <v-col cols="12" sm="6" md="12" class="py-0">
@@ -108,7 +108,7 @@
                                 </v-col>
                             </v-row>
                         </v-col>
-                    </no-ssr>
+                    </client-only>
                 </v-col>
             </v-row>
 
@@ -121,7 +121,7 @@
                     </v-card-title>
                     <v-card-text>
                         <v-row>
-                            <no-ssr>
+                            <client-only>
                                 <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
                                     <v-col class="pb-0" cols="12">
                                         <v-icon left>mdi-language-php</v-icon>
@@ -182,7 +182,7 @@
                                         ></v-rating>
                                     </v-col>
                                 </v-col>
-                            </no-ssr>
+                            </client-only>
                         </v-row>
                     </v-card-text>
                     <v-card-title style="background-color:#EF5350">
@@ -190,7 +190,7 @@
                     </v-card-title>
                     <v-card-text>
                         <v-row>
-                            <no-ssr>
+                            <client-only>
                                 <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
                                     <v-col class="pb-0" cols="12">
                                         <v-icon left>mdi-laravel</v-icon>
@@ -271,7 +271,7 @@
                                         ></v-rating>
                                     </v-col>
                                 </v-col>
-                            </no-ssr>
+                            </client-only>
                         </v-row>
                     </v-card-text>
                     <v-card-title style="background-color:#EF5350">
@@ -279,7 +279,7 @@
                     </v-card-title>
                     <v-card-text>
                         <v-row>
-                            <no-ssr>
+                            <client-only>
                                 <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
                                     <v-col class="pb-0" cols="12">
                                         <v-icon left>mdi-language-python</v-icon>
@@ -361,7 +361,7 @@
                                         ></v-rating>
                                     </v-col>
                                 </v-col>
-                            </no-ssr>
+                            </client-only>
                         </v-row>
                     </v-card-text>
 
@@ -370,7 +370,7 @@
                     </v-card-title>
                     <v-card-text>
                         <v-row>
-                            <no-ssr>
+                            <client-only>
                                 <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
                                     <v-col class="pb-0" cols="12">
                                         <v-icon left>mdi-flash</v-icon>
@@ -431,7 +431,7 @@
                                         ></v-rating>
                                     </v-col>
                                 </v-col>
-                            </no-ssr>
+                            </client-only>
                         </v-row>
                     </v-card-text>
                 </v-card>
