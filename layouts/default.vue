@@ -98,7 +98,6 @@
     export default {
         components: {
             LoginComponent,
-
         },
         data() {
             return {
@@ -198,7 +197,7 @@
                 this.overlay = false
                 this.$nuxt.$loading.finish();
             });
-            this.$axios.onResponseError(response => {
+            this.$axios.onResponseError(error => {
                 this.overlay = false
                 this.$nuxt.$loading.finish();
                 const code = parseInt(error.response && error.response.status)
