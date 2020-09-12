@@ -113,24 +113,25 @@
             </v-row>
 
         </v-col>
-        <v-col cols="12" md="7" v-show="showSkills">
+        <v-col cols="12" md="7" >
             <v-row cols="12">
                 <v-card>
-                    <v-card-title style="background-color:#EF5350">
-                        <h1 class="headline mx-auto">Main programming languages</h1>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-row>
-                            <client-only>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-language-php</v-icon>
-                                        Php
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
+                    <div v-for="(category, index) in categorySkills" :key="index">
+                        <v-card-title style="background-color:#EF5350">
+                        <h1 class="headline mx-auto">{{category.title}}</h1>
+                        </v-card-title>
+                        <v-card-text>
+                            <v-row>
+                                <client-only>
+                                    <v-col cols="12" sm="6" class="py-0" data-aos="fade-right" v-for="(skill, index) in category.skills" :key="index">
+                                        <v-col class="pb-0" cols="12">
+                                            <v-icon left>{{skill.icon}}</v-icon>
+                                            {{skill.name}}
+                                        </v-col>
+                                        <v-col class="pt-0" cols="12">
+                                            <v-rating
                                                 length="5"
-                                                :value="4"
+                                                :value="skill.value"
                                                 half-increments
                                                 half-icon="mdi-star-half"
                                                 empty-icon="mdi-star-outline"
@@ -139,372 +140,14 @@
                                                 :size="25"
                                                 color="#EF5350"
                                                 background-color="grey lighten-1"
-                                        ></v-rating>
+                                            ></v-rating>
+                                        </v-col>
                                     </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-language-javascript</v-icon>
-                                        Javascript
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="4.5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon>mdi-database</v-icon>
-                                        SQL
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="3.5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                            </client-only>
-                        </v-row>
-                    </v-card-text>
-                    <v-card-title style="background-color:#EF5350">
-                        <h1 class="headline mx-auto"> Main Frameworks</h1>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-row>
-                            <client-only>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-laravel</v-icon>
-                                        Laravel
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="4.5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-symfony</v-icon>
-                                        Symfony
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="3.5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-vuejs</v-icon>
-                                        VueJs
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-nuxt</v-icon>
-                                        NuxtJs
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="4"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                            </client-only>
-                        </v-row>
-                    </v-card-text>
-                    <v-card-title style="background-color:#EF5350">
-                        <h1 class="headline mx-auto">Others programming languages</h1>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-row>
-                            <client-only>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-language-python</v-icon>
-                                        Python
-
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="2.5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-language-lua</v-icon>
-                                        Lua
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="3"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-chip</v-icon>
-                                        Arduino
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="3.5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-chip</v-icon>
-                                        Ladder (PLC)
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="2"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                            </client-only>
-                        </v-row>
-                    </v-card-text>
-
-                    <v-card-title style="background-color:#EF5350">
-                        <h1 class="headline mx-auto">DevOps</h1>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-row>
-                            <client-only>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-git</v-icon>
-                                        Git
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="5"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-aws</v-icon>
-                                        AWS and Linux
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="3"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-docker</v-icon>
-                                        Docker
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="2"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                            </client-only>
-                        </v-row>
-                    </v-card-text>
-                    <v-card-title style="background-color:#EF5350">
-                        <h1 class="headline mx-auto">Others skills</h1>
-                    </v-card-title>
-                    <v-card-text>
-                        <v-row>
-                            <client-only>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-flash</v-icon>
-                                        Electronic
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="4"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-chip</v-icon>
-                                        Microcontrollers
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="4"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
-                                    <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-printer-3d-nozzle</v-icon>
-                                        3d modeling with fusion 360 and 3d printing
-                                    </v-col>
-                                    <v-col class="pt-0" cols="12">
-                                        <v-rating
-                                                length="5"
-                                                :value="3"
-                                                half-increments
-                                                half-icon="mdi-star-half"
-                                                empty-icon="mdi-star-outline"
-                                                full-icon="mdi-star"
-                                                readonly
-                                                :size="25"
-                                                color="#EF5350"
-                                                background-color="grey lighten-1"
-                                        ></v-rating>
-                                    </v-col>
-                                </v-col>
-                            </client-only>
-                        </v-row>
-                    </v-card-text>
+                                </client-only>
+                            </v-row>
+                        </v-card-text>
+                    </div>    
                 </v-card>
-
             </v-row>
         </v-col>
     </v-row>
@@ -515,7 +158,118 @@
         name: "about",
         data() {
             return {
-                showSkills: true
+                categorySkills:[
+                    {
+                        title: 'Main programming languages',
+                        skills:[
+                            {
+                                name: 'Php',
+                                icon:'mdi-language-php',
+                                value: '4'
+                            },
+                            {
+                                name: 'Javascript',
+                                icon:'mdi-language-javascript',
+                                value: '4.5'
+                            },
+                            {
+                                name: 'SQL',
+                                icon:'mdi-database',
+                                value: '4'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Main Frameworks',
+                        skills:[
+                            {
+                                name: 'Laravel',
+                                icon:'mdi-laravel',
+                                value: '4.9'
+                            },
+                            {
+                                name: 'Symfony',
+                                icon:'mdi-symfony',
+                                value: '3.5'
+                            },
+                            {
+                                name: 'VueJs',
+                                icon:'mdi-vuejs',
+                                value: '5'
+                            },
+                            {
+                                name: 'NuxtJs',
+                                icon:'mdi-vuejs',
+                                value: '4.5'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Others programming languages',
+                        skills:[
+                            {
+                                name: 'Python',
+                                icon:'mdi-language-python',
+                                value: '2'
+                            },
+                            {
+                                name: 'Lua',
+                                icon:'mdi-language-lua',
+                                value: '3'
+                            },
+                            {
+                                name: 'Arduino',
+                                icon:'mdi-chip',
+                                value: '3.8'
+                            },
+                            {
+                                name: 'Ladder (PLC)',
+                                icon:'mdi-chip',
+                                value: '2'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'DevOps',
+                        skills:[
+                            {
+                                name: 'Git',
+                                icon:'mdi-git',
+                                value: '4.9'
+                            },
+                            {
+                                name: 'AWS and Linux',
+                                icon:'mdi-aws',
+                                value: '3'
+                            },
+                            {
+                                name: 'Docker',
+                                icon:'mdi-docker',
+                                value: '1.9'
+                            },
+                        ]
+                    },
+                    {
+                        title: 'Others skills',
+                        skills:[
+                            {
+                                name: 'Electronic',
+                                icon:'mdi-flash',
+                                value: '4'
+                            },
+                            {
+                                name: 'Microcontrollers',
+                                icon:'mdi-chip',
+                                value: '4'
+                            },
+                            {
+                                name: '3d modeling with fusion 360 and 3d printing',
+                                icon:'mdi-printer-3d-nozzle',
+                                value: '3'
+                            },
+                        ]
+                    },
+                    ]
             }
         },
         mounted() {

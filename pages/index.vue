@@ -24,6 +24,7 @@
                             <v-icon color="#222345">mdi-heart</v-icon>
                             Laravel
                         </h4>
+                        <v-btn outlined to="/aboutDeveloper" ><div class="text-h1">About Developer</div></v-btn>
                     </v-col>
                 </v-row>
             </v-parallax>
