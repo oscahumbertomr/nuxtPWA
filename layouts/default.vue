@@ -82,7 +82,7 @@
                 :fixed="fixed"
                 app
         >
-            <span>&copy; 2019</span>
+            <span>&copy; 2020</span>
         </v-footer>
         <v-overlay :value="overlay" opacity="0.8" absolute z-index="500">
             <span class="custom-loader-cached">

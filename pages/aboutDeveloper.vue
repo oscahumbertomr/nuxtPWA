@@ -32,7 +32,7 @@
                     </v-col>
                     <client-only>
                         <v-col cols="12" class="pt-0" data-aos="fade-right">
-                            27 years old
+                            28 years old
                         </v-col>
                     </client-only>
                 </v-col>
@@ -309,7 +309,7 @@
                                     <v-col class="pt-0" cols="12">
                                         <v-rating
                                                 length="5"
-                                                :value="4"
+                                                :value="3"
                                                 half-increments
                                                 half-icon="mdi-star-half"
                                                 empty-icon="mdi-star-outline"
@@ -366,6 +366,75 @@
                     </v-card-text>
 
                     <v-card-title style="background-color:#EF5350">
+                        <h1 class="headline mx-auto">DevOps</h1>
+                    </v-card-title>
+                    <v-card-text>
+                        <v-row>
+                            <client-only>
+                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
+                                    <v-col class="pb-0" cols="12">
+                                        <v-icon left>mdi-git</v-icon>
+                                        Git
+                                    </v-col>
+                                    <v-col class="pt-0" cols="12">
+                                        <v-rating
+                                                length="5"
+                                                :value="5"
+                                                half-increments
+                                                half-icon="mdi-star-half"
+                                                empty-icon="mdi-star-outline"
+                                                full-icon="mdi-star"
+                                                readonly
+                                                :size="25"
+                                                color="#EF5350"
+                                                background-color="grey lighten-1"
+                                        ></v-rating>
+                                    </v-col>
+                                </v-col>
+                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
+                                    <v-col class="pb-0" cols="12">
+                                        <v-icon left>mdi-aws</v-icon>
+                                        AWS and Linux
+                                    </v-col>
+                                    <v-col class="pt-0" cols="12">
+                                        <v-rating
+                                                length="5"
+                                                :value="3"
+                                                half-increments
+                                                half-icon="mdi-star-half"
+                                                empty-icon="mdi-star-outline"
+                                                full-icon="mdi-star"
+                                                readonly
+                                                :size="25"
+                                                color="#EF5350"
+                                                background-color="grey lighten-1"
+                                        ></v-rating>
+                                    </v-col>
+                                </v-col>
+                                <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
+                                    <v-col class="pb-0" cols="12">
+                                        <v-icon left>mdi-docker</v-icon>
+                                        Docker
+                                    </v-col>
+                                    <v-col class="pt-0" cols="12">
+                                        <v-rating
+                                                length="5"
+                                                :value="2"
+                                                half-increments
+                                                half-icon="mdi-star-half"
+                                                empty-icon="mdi-star-outline"
+                                                full-icon="mdi-star"
+                                                readonly
+                                                :size="25"
+                                                color="#EF5350"
+                                                background-color="grey lighten-1"
+                                        ></v-rating>
+                                    </v-col>
+                                </v-col>
+                            </client-only>
+                        </v-row>
+                    </v-card-text>
+                    <v-card-title style="background-color:#EF5350">
                         <h1 class="headline mx-auto">Others skills</h1>
                     </v-card-title>
                     <v-card-text>
@@ -413,13 +482,13 @@
                                 </v-col>
                                 <v-col cols="12" sm="6" class="py-0" data-aos="fade-right">
                                     <v-col class="pb-0" cols="12">
-                                        <v-icon left>mdi-server-network</v-icon>
-                                        AWS and Linux
+                                        <v-icon left>mdi-printer-3d-nozzle</v-icon>
+                                        3d modeling with fusion 360 and 3d printing
                                     </v-col>
                                     <v-col class="pt-0" cols="12">
                                         <v-rating
                                                 length="5"
-                                                :value="4"
+                                                :value="3"
                                                 half-increments
                                                 half-icon="mdi-star-half"
                                                 empty-icon="mdi-star-outline"
