@@ -156,6 +156,20 @@
 <script>
     export default {
         name: "about",
+        head() {
+            return {
+                title: "About Developer",
+                meta: [
+                    // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+                    {
+                        hid: "aboutDeveloper",
+                        name: "aboutDeveloper",
+                        content:
+                            "About Developer"
+                    }
+                ]
+            };
+        },
         data() {
             return {
                 categorySkills:[

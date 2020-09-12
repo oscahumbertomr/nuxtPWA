@@ -27,3 +27,29 @@
     </v-col>
   </v-row>
 </template>
+<script>
+
+
+    export default {
+        head() {
+            return {
+                title: "inspire",
+                meta: [
+                    // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+                    {
+                        hid: "inspire",
+                        name: "inspire",
+                        content:
+                            "inspire"
+                    }
+                ]
+            };
+        },
+        components: {
+
+        },
+        mounted() {
+
+        }
+    }
+</script>
