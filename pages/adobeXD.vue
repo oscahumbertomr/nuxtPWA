@@ -49,7 +49,9 @@
                 <v-col cols="12">
                     <h2 class="h2">
                         <a href="https://xd.adobe.com/view/f6f3f632-7163-404a-a083-69f23174623d-a3a0/specs/"
-                           target="_blank">https://xd.adobe.com/view/f6f3f632-7163-404a-a083-69f23174623d-a3a0/specs/</a>
+                           target="_blank"
+                            style="word-break: break-all"
+                        >https://xd.adobe.com/view/f6f3f632-7163-404a-a083-69f23174623d-a3a0/specs/</a>
                     </h2>
                 </v-col>
             </v-row>
@@ -136,7 +138,11 @@
         letter-spacing: $unnamed-character-spacing-0;
         color: $negro;
     }
-
+    .v-btn:not(.v-btn--round).v-size--default {
+        height: 36px;
+        min-width: 64px;
+        padding: 0 0;
+    }
 </style>
 <script>
 

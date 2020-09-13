@@ -112,6 +112,11 @@
                         to: '/'
                     },
                     {
+                        icon: 'mdi-adobe',
+                        title: 'AdobeXD',
+                        to: '/'
+                    },
+                    {
                         icon: 'mdi-emoticon-happy-outline',
                         title: 'Inspire',
                         to: '/inspire'
