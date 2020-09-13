@@ -114,7 +114,7 @@
                     {
                         icon: 'mdi-adobe',
                         title: 'AdobeXD',
-                        to: '/adobeXD'
+                        to: '/adobexd'
                     },
                     {
                         icon: 'mdi-emoticon-happy-outline',
