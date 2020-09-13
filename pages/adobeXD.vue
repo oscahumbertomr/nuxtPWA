@@ -9,16 +9,16 @@
             <v-img src="/Logo.svg" contain max-width="150"></v-img>
             <v-toolbar-title v-text="title"/>
             <v-spacer/>
-            <v-btn text class="h2" >
+            <v-btn text class="h2" to="/" >
                 Inicio
             </v-btn>
-            <v-btn text class="h2" >
+            <v-btn text class="h2" to="/" >
                 Acerca
             </v-btn>
-            <v-btn text class="h2" >
+            <v-btn text class="h2" to="/" >
                 Blog
             </v-btn>
-            <v-btn text class="h2" >
+            <v-btn text class="h2" to="/" >
                 Contacto
             </v-btn>
         </v-app-bar>
