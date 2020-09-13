@@ -1,0 +1,78 @@
+:root {
+
+    /* Colors: */
+    --negro: #1A2B31;
+    --gris: #8AA2AA;
+    --celeste: #21A7D8;
+    --blanco: #FFFFFF;
+
+    /* Font/text values */
+    --unnamed-font-family-nunito-sans: Nunito Sans;
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-weight-800: 800px;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-size-14: 14px;
+    --unnamed-font-size-16: 16px;
+    --unnamed-font-size-28: 28px;
+    --unnamed-font-size-40: 40px;
+    --unnamed-character-spacing-0: 0px;
+    --unnamed-line-spacing-22: 22px;
+    --unnamed-line-spacing-24: 24px;
+    --unnamed-line-spacing-32: 32px;
+    --unnamed-line-spacing-52: 52px;
+}
+
+/* Character Styles */
+.h1 {
+    font-family: var(--unnamed-font-family-nunito-sans);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-800);
+    font-size: var(--unnamed-font-size-40);
+    line-height: var(--unnamed-line-spacing-52);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--negro);
+    top: 150px;
+    left: 383px;
+    width: 600px;
+    height: 98px;
+}
+
+.date {
+    font-family: var(--unnamed-font-family-nunito-sans);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-14);
+    line-height: var(--unnamed-line-spacing-24);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--gris);
+}
+
+.p {
+    font-family: var(--unnamed-font-family-nunito-sans);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-24);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--negro);
+}
+
+.menu-link {
+    font-family: var(--unnamed-font-family-nunito-sans);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-22);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--blanco);
+}
+
+.h2 {
+    font-family: var(--unnamed-font-family-nunito-sans);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-28);
+    line-height: var(--unnamed-line-spacing-32);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--negro);
+}
