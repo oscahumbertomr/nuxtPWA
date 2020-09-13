@@ -6,7 +6,7 @@
                 app
                 color="#21A7D8"
         >
-            <v-img src="Logo.svg" contain max-width="150"></v-img>
+            <v-img src="/Logo.svg" contain max-width="150"></v-img>
             <v-toolbar-title v-text="title"/>
             <v-spacer/>
             <v-btn text class="h2" >
@@ -31,7 +31,7 @@
                     <div class="date">Publicado el 27 de junio de 2020</div>
                 </v-col>
                 <v-col cols="12" class="py-0" style="margin-top: 28px !important;">
-                    <v-img src="cat.png" contain></v-img>
+                    <v-img src="/cat.png" contain></v-img>
                 </v-col>
                 <v-col cols="12" class="py-0" style="margin-top: 28px !important;">
                     <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet viverra turpis.
