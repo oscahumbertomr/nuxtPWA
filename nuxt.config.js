@@ -60,6 +60,7 @@ export default {
     */
     buildModules: [
         '@nuxtjs/vuetify',
+        '@nuxtjs/dotenv'
     ],
     axios: {
         baseURL: process.env.NODE_ENV == 'production' ? "https://nuxt-pwa-oscar.herokuapp.com/api/" : 'http://localhost:8000/api/' ,
