@@ -53,7 +53,7 @@ export default {
       // The map, centered on Central Park
       const center = { lat: 20.9923477, lng: -89.6306225 };
       const options = {
-        zoom: 15,
+        zoom: 13.25,
         center: center,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
       };
