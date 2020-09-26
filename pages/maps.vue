@@ -5,7 +5,7 @@
         <div id="map"></div>
     </v-col>
     <v-col cols="12" >
-        <h1 v-if="monto" class="text-center"> Distancia en carro es de {{ distanciaEntrega }} ({{tiempoEntrega}}), costo entrega {{monto}} MXN </h1>
+        <h3 v-if="monto" class="text-center"> Distancia en carro es de {{ distanciaEntrega }} ({{tiempoEntrega}}), costo entrega {{monto}} MXN </h3>
     </v-col>
   </v-row>
 </template>
@@ -43,6 +43,7 @@ export default {
       tiempoEntrega:0,
       distanciaEntrega:0,
       map: null,
+      amaiMarker: null,
       directionsService: null,
       directionsRenderer: null,
     };
@@ -50,7 +51,7 @@ export default {
   methods: {
     initMap() {
       // The map, centered on Central Park
-      const center = { lat: 21.0321475, lng: -89.6477273 };
+      const center = { lat: 21.032155, lng: -89.647628 };
       const options = {
         zoom: 15,
         center: center,
@@ -64,10 +65,15 @@ export default {
 
       const frick = { lat: 20.9979039, lng: -89.5763652 };
       // The markers for The Dakota and The Frick Collection
-      /*var amaiMarker = new google.maps.Marker({
+      const image =
+    "http://localhost:3000/amai.png";
+  
+      vm.amaiMarker = new google.maps.Marker({
         position: amaiCoordenadas,
         map: this.map,
-      });*/
+        title: 'Amai Tienda',
+        icon: image,
+      });
       // var mk2 = new google.maps.Marker({ position: frick, map: map });
       this.directionsService = new google.maps.DirectionsService();
       this.directionsRenderer = new google.maps.DirectionsRenderer();
@@ -75,13 +81,15 @@ export default {
       // Create route from existing points used for markers
 
       google.maps.event.addListener(this.map, "click", (event) => {
-        window.eRes = event;
         vm.clickMaps(event);
       });
     },
     clickMaps(event) {
       //var mk2 = new google.maps.Marker({ position: frick, map: map });
-
+      if(this.amaiMarker){
+        this.amaiMarker.setMap(null)
+        this.amaiMarker = null;
+      }
       const route = {
         origin: amaiCoordenadas,
         destination: event.latLng,
