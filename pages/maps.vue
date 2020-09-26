@@ -51,7 +51,7 @@ export default {
   methods: {
     initMap() {
       // The map, centered on Central Park
-      const center = { lat: 20.9923477, lng: -89.6306225 };
+      const center = { lat: 21.0107774, lng: -89.6429821 };
       const options = {
         zoom: 13.25,
         center: center,
@@ -63,7 +63,6 @@ export default {
       let vm = this;
       // Locations of landmarks
 
-      const frick = { lat: 20.9979039, lng: -89.5763652 };
       // The markers for The Dakota and The Frick Collection
       const image =
     "https://www.ingoscar.co/amai.png";
