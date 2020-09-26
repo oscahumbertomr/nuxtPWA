@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "co.ingoscar.app",
+                 "sha256_cert_fingerprints": ["FA:83:8D:9F:FD:17:6E:97:FE:78:32:C0:AA:27:45:E3:16:48:84:6A:01:52:38:AC:D7:B4:D7:E1:AE:F5:1D:42"] }
+  }]
