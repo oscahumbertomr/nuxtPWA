@@ -66,7 +66,7 @@ export default {
       const frick = { lat: 20.9979039, lng: -89.5763652 };
       // The markers for The Dakota and The Frick Collection
       const image =
-    "http://localhost:3000/amai.png";
+    "https://www.ingoscar.co/amai.png";
   
       vm.amaiMarker = new google.maps.Marker({
         position: amaiCoordenadas,
