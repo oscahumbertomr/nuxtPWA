@@ -51,7 +51,7 @@ export default {
   methods: {
     initMap() {
       // The map, centered on Central Park
-      const center = { lat: 21.032155, lng: -89.647628 };
+      const center = { lat: 20.9923477, lng: -89.6306225 };
       const options = {
         zoom: 15,
         center: center,
