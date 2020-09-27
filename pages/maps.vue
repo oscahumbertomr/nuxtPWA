@@ -51,6 +51,8 @@ export default {
   methods: {
     initMap() {
       // The map, centered on Central Park
+      const lat = this.$route.query.lat
+      const lon = this.$route.query.lon
       const center = { lat: 21.0107774, lng: -89.6429821 };
       const options = {
         zoom: 13.25,
@@ -73,25 +75,32 @@ export default {
         title: 'Amai Tienda',
         icon: image,
       });
+
+      
       // var mk2 = new google.maps.Marker({ position: frick, map: map });
       this.directionsService = new google.maps.DirectionsService();
       this.directionsRenderer = new google.maps.DirectionsRenderer();
       this.directionsRenderer.setMap(this.map); // Existing map object displays directions
       // Create route from existing points used for markers
-
+      if(!!lat){
+        this.route({ lat: Number(lat), lng: Number(lon) })
+      }
       google.maps.event.addListener(this.map, "click", (event) => {
         vm.clickMaps(event);
       });
     },
     clickMaps(event) {
       //var mk2 = new google.maps.Marker({ position: frick, map: map });
+      this.route(event.latLng)
+    },
+    route(latLng){
       if(this.amaiMarker){
         this.amaiMarker.setMap(null)
         this.amaiMarker = null;
       }
       const route = {
         origin: amaiCoordenadas,
-        destination: event.latLng,
+        destination: latLng,
         travelMode: "DRIVING",
       };
       let vm = this;
@@ -121,7 +130,7 @@ export default {
           }
         }
       });
-    },
+    }
   },
   mounted() {
     //var input = this.$refs.searchTextField; //.getElementById('searchTextField');
