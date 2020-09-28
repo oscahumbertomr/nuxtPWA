@@ -129,7 +129,6 @@ export default {
             description: 'testing laravel whit nuxtJs on PWA',
             orientation: 'portrait',
             lang: 'en',
-
         },
         workbox: {
             runtimeCaching: [
