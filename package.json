@@ -1,8 +1,8 @@
 {
-  "name": "laravelNuxt",
+  "name": "pwaOscar",
   "version": "1.0.0",
   "description": "testing laravel whith nuxt",
-  "author": "}",
+  "author": "Oscar Humberto Montejo Rodriguez",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.8.4",
     "@nuxtjs/axios": "^5.8.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/pwa": "^3.0.2",
     "aos": "^3.0.0-beta.6",
     "nuxt": "^2.0.0"
   },

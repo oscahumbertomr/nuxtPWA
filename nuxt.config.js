@@ -10,18 +10,18 @@ export default {
         titleTemplate: '%s - ' + process.env.npm_package_name,
         title: process.env.npm_package_name || '',
         meta: [
-            {charset: 'utf-8'},
-            {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-            {hid: 'description', name: 'description', content: process.env.npm_package_description || ''}
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
         ],
         link: [
-            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
     /*
     ** Customize the progress-bar color
     */
-    loading: {color: '#fff'},
+    loading: { color: '#fff' },
     /*
     ** Global CSS
     */
@@ -50,10 +50,10 @@ export default {
         },
         '~/plugins/mixins/userPlugin.js',
 
-       /* {
-            src: '~/plugins/mixins/userPlugin.js',
-            ssr: true
-        },*/
+        /* {
+             src: '~/plugins/mixins/userPlugin.js',
+             ssr: true
+         },*/
     ],
     /*
     ** Nuxt.js dev-modules
@@ -63,18 +63,18 @@ export default {
         '@nuxtjs/dotenv'
     ],
     axios: {
-        baseURL: process.env.NODE_ENV == 'production' ? "https://nuxt-pwa-oscar.herokuapp.com/api/" : 'http://localhost:8000/api/' ,
+        baseURL: process.env.NODE_ENV == 'production' ? "https://nuxt-pwa-oscar.herokuapp.com/api/" : 'http://localhost:8000/api/',
         // baseURL: "http://localhost:8000/",
         // baseURL: "https://nuxt-pwa-oscar.herokuapp.com/",
     },
     auth: {
-        redirect:false,
+        redirect: false,
         strategies: {
             local: {
                 endpoints: {
-                    login: {url: 'auth/login', method: 'post', propertyName: 'meta.token'},
-                    logout: {url: 'auth/logout', method: 'post'},
-                    user: {url: 'auth/user', method: 'get', propertyName: 'data'}
+                    login: { url: 'auth/login', method: 'post', propertyName: 'meta.token' },
+                    logout: { url: 'auth/logout', method: 'post' },
+                    user: { url: 'auth/user', method: 'get', propertyName: 'data' }
                 },
             }
         }
@@ -121,9 +121,6 @@ export default {
         }
     },
     pwa: {
-        icon:{
-            purpose : "any maskable"
-        },
         manifest: {
             display: 'standalone',
             start_url: '/',
@@ -139,24 +136,24 @@ export default {
                     urlPattern: 'https://fonts.googleapis.com/.*',
                     handler: 'cacheFirst',
                     method: 'GET',
-                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
+                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
                 },
                 {
                     urlPattern: 'https://fonts.gstatic.com/.*',
                     handler: 'cacheFirst',
                     method: 'GET',
-                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
+                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
                 },
                 {
                     urlPattern: 'https://cdn.snipcart.com/.*',
                     method: 'GET',
-                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
+                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
                 },
                 {
                     urlPattern: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
                     handler: 'cacheFirst',
                     method: 'GET',
-                    strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
+                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
                 }
             ]
         }
