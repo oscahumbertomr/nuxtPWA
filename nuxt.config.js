@@ -121,6 +121,9 @@ export default {
         }
     },
     pwa: {
+        icon:{
+            purpose : ['any', 'maskable']
+        },
         manifest: {
             display: 'standalone',
             start_url: '/',
