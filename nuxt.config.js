@@ -122,7 +122,7 @@ export default {
     },
     pwa: {
         icon:{
-            purpose : ['any', 'maskable']
+            purpose : "any maskable"
         },
         manifest: {
             display: 'standalone',
