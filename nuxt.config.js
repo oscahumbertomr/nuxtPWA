@@ -96,12 +96,9 @@ export default {
         customVariables: ['~/assets/variables.scss'],
         treeShake: true,
         defaultAssets: {
-            font: {
-                family: null
-            },
+            font: false,
             icons: 'mdiSvg'
         },
-        customVariables: ['~/assets/variables.scss'],
         theme: {
             dark: true,
             themes: {
