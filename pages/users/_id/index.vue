@@ -10,9 +10,6 @@
         head:{
             title:'user id'
         },
-        validate(context){
-            return !(/\D/g).test(context.params.id)
-        }
     }
 </script>
 

@@ -9,7 +9,7 @@
         <v-col xs="11" sm="12" md="12">
             <v-parallax
                     dark
-                    src="/waves.jpg"
+                    src="/cat.png"
                     style="min-height: 50vh; margin-top: 0"
             >
                 <v-row
