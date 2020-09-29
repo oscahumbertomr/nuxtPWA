@@ -2,3 +2,16 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+@font-face {
+    font-family: 'Barlow';
+    font-weight: normal;
+    font-weight: 400;
+    //src: url('~static/fonts/font.file.woff') format('woff');
+    src: url('~assets/fonts/Barlow/Barlow-Regular.ttf') format('truetype');
+  }
+  
+  $body-font-family: "Barlow", sans-serif;
+  .v-application {
+    font-family: $body-font-family, sans-serif !important;
+  }
+  

@@ -93,9 +93,11 @@ export default {
     ** https://github.com/nuxt-community/vuetify-module
     */
     vuetify: {
+        customVariables: ['~/assets/variables.scss'],
+        treeShake: true,
         defaultAssets: {
             font: {
-                family: 'Roboto'
+                family: null
             },
             icons: 'mdiSvg'
         },
