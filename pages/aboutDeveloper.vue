@@ -5,7 +5,7 @@
         <v-col cols="12">
           <v-img
             dark
-            src="/oscar.png"
+            src="/oscar.webp"
             max-height="100%"
             width="50%"
             min-height="180px"
