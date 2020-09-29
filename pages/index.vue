@@ -11,7 +11,7 @@
       </h4>
     </v-col>
     <v-col xs="11" sm="12" md="12">
-      <v-parallax dark src="/cat.png" style="min-height: 50vh; margin-top: 0">
+      <v-parallax dark src="/cat.webp" style="min-height: 50vh; margin-top: 0">
         <v-row align="center" justify="center">
           <v-col
             class="text-center"
