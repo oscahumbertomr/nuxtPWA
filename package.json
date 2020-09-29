@@ -1,8 +1,8 @@
 {
-  "name": "pwaOscar",
+  "name": "ingOscar",
   "version": "1.0.0",
   "description": "testing laravel whith nuxt",
-  "author": "Oscar Humberto Montejo Rodriguez",
+  "author": "}",
   "private": true,
   "scripts": {
     "dev": "nuxt",
