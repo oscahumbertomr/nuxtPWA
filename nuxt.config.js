@@ -10,18 +10,18 @@ export default {
         titleTemplate: '%s - ' + process.env.npm_package_name,
         title: process.env.npm_package_name || '',
         meta: [
-            {charset: 'utf-8'},
-            {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-            {hid: 'description', name: 'description', content: process.env.npm_package_description || ''}
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
         ],
         link: [
-            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ]
     },
     /*
     ** Customize the progress-bar color
     */
-    loading: {color: '#fff'},
+    loading: { color: '#fff' },
     /*
     ** Global CSS
     */
@@ -50,10 +50,10 @@ export default {
         },
         '~/plugins/mixins/userPlugin.js',
 
-       /* {
-            src: '~/plugins/mixins/userPlugin.js',
-            ssr: true
-        },*/
+        /* {
+             src: '~/plugins/mixins/userPlugin.js',
+             ssr: true
+         },*/
     ],
     /*
     ** Nuxt.js dev-modules
@@ -63,18 +63,18 @@ export default {
         '@nuxtjs/dotenv'
     ],
     axios: {
-        baseURL: process.env.NODE_ENV == 'production' ? "https://nuxt-pwa-oscar.herokuapp.com/api/" : 'http://localhost:8000/api/' ,
+        baseURL: process.env.NODE_ENV == 'production' ? "https://nuxt-pwa-oscar.herokuapp.com/api/" : 'http://localhost:8000/api/',
         // baseURL: "http://localhost:8000/",
         // baseURL: "https://nuxt-pwa-oscar.herokuapp.com/",
     },
     auth: {
-        redirect:false,
+        redirect: false,
         strategies: {
             local: {
                 endpoints: {
-                    login: {url: 'auth/login', method: 'post', propertyName: 'meta.token'},
-                    logout: {url: 'auth/logout', method: 'post'},
-                    user: {url: 'auth/user', method: 'get', propertyName: 'data'}
+                    login: { url: 'auth/login', method: 'post', propertyName: 'meta.token' },
+                    logout: { url: 'auth/logout', method: 'post' },
+                    user: { url: 'auth/user', method: 'get', propertyName: 'data' }
                 },
             }
         }
@@ -93,6 +93,12 @@ export default {
     ** https://github.com/nuxt-community/vuetify-module
     */
     vuetify: {
+        defaultAssets: {
+            font: {
+                family: 'Roboto'
+            },
+            icons: 'mdiSvg'
+        },
         customVariables: ['~/assets/variables.scss'],
         theme: {
             dark: true,
@@ -130,7 +136,7 @@ export default {
             orientation: 'portrait',
             lang: 'en',
         },
-        workbox: {
+        /*workbox: {
             runtimeCaching: [
                 {
                     urlPattern: 'https://fonts.googleapis.com/.*',
@@ -156,6 +162,6 @@ export default {
                     strategyOptions: {cacheableResponse: {statuses: [0, 200]}}
                 }
             ]
-        }
+        }*/
     },
 }

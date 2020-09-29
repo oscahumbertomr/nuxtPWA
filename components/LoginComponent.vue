@@ -19,7 +19,7 @@
                             v-model="email"
                             :error="errorCredentials"
                             v-on:keyup.enter="login"
-                            prepend-icon="mdi-account-circle"
+                            :prepend-icon="mdiAccountCircle"
                     />
                     <v-text-field
                             v-on:keyup.enter="login"
@@ -31,8 +31,8 @@
                             :disabled="loading"
                             v-model="password"
                             :error="errorCredentials"
-                            prepend-icon="mdi-lock"
-                            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                            :prepend-icon="mdiLock"
+                            :append-icon="showPassword ? mdiEye : mdiEyeOff"
                             @click:append="showPassword = !showPassword"
                     />
                 </v-form>
@@ -56,10 +56,15 @@
 </template>
 
 <script>
+    import { mdiLock,mdiEye,mdiEyeOff,mdiAccountCircle } from "@mdi/js";
     export default {
         name: "LoginComponent",
         data() {
             return {
+                mdiLock:mdiLock,
+                mdiEye:mdiEye,
+                mdiEyeOff:mdiEyeOff,
+                mdiAccountCircle:mdiAccountCircle,
                 emailRules: [
                     v => !!v || 'E-mail is required',
                 ],

@@ -34,16 +34,16 @@
             <v-menu bottom offset-y v-if="authenticated">
                 <template v-slot:activator="{ on }">
                     <v-btn text v-on="on">
-                        <v-icon left>mdi-account</v-icon>
+                        <v-icon left>{{mdiAccount}}</v-icon>
                         {{user.name}}
-                        <v-icon right>mdi-dots-vertical</v-icon>
+                        <v-icon right>{{mdiDotsVertical}}</v-icon>
                     </v-btn>
                 </template>
 
                 <v-list>
                     <v-list-item @click="logOut">
                         <v-list-item-title>
-                            <v-icon left>mdi-login</v-icon>
+                            <v-icon left>{{mdiLogin}}</v-icon>
                             logout
                         </v-list-item-title>
                     </v-list-item>
@@ -51,7 +51,7 @@
             </v-menu>
 
             <v-btn text @click="modalLoginStatus = true" v-else>
-                <v-icon left>mdi-login</v-icon>
+                <v-icon left>{{mdiLogin}}</v-icon>
                 login
             </v-btn>
         </v-app-bar>
@@ -71,7 +71,7 @@
                 <v-list-item @click.native="right = !right">
                     <v-list-item-action>
                         <v-icon light>
-                            mdi-repeat
+                            {{mdiRepeat}}
                         </v-icon>
                     </v-list-item-action>
                     <v-list-item-title>Switch drawer (click me)</v-list-item-title>
@@ -86,7 +86,7 @@
         </v-footer>
         <v-overlay :value="overlay" opacity="0.8" absolute z-index="500">
             <span class="custom-loader-cached">
-                <v-icon light color="#ffffff" x-large>mdi-cached</v-icon>
+                <v-icon light color="#ffffff" x-large>{{mdiCached}}</v-icon>
             </span>
         </v-overlay>
     </v-app>
@@ -94,6 +94,7 @@
 
 <script>
     import LoginComponent from '@/components/LoginComponent.vue';
+    import { mdiCached,mdiRepeat,mdiLogin,mdiDotsVertical,mdiAccount,mdiHomeOutline,mdiAdobe,mdiEmoticonHappyOutline,mdiApplication,mdiHeart } from "@mdi/js";
 
     export default {
         components: {
@@ -101,44 +102,49 @@
         },
         data() {
             return {
+                mdiCached:mdiCached,
+                mdiRepeat:mdiRepeat,
+                mdiLogin:mdiLogin,
+                mdiDotsVertical:mdiDotsVertical,
+                mdiAccount:mdiAccount,
                 overlay: false,
                 clipped: false,
                 drawer: false,
                 fixed: false,
                 items: [
                     {
-                        icon: 'mdi-home-outline',
+                        icon: mdiHomeOutline,
                         title: 'Home  ',
                         to: '/'
                     },
                     {
-                        icon: 'mdi-adobe',
+                        icon: mdiAdobe,
                         title: 'AdobeXD',
                         to: '/adobeXD'
                     },
                     {
-                        icon: 'mdi-emoticon-happy-outline',
+                        icon: mdiEmoticonHappyOutline,
                         title: 'Inspire',
                         to: '/inspire'
                     },
                     {
-                        icon: 'mdi-application',
+                        icon: mdiApplication,
                         title: 'Posts',
                         to: '/posts',
                         shouldLoged: true
                     },
                     {
-                        icon: 'mdi-application',
+                        icon: mdiApplication,
                         title: 'Users',
                         to: '/users'
                     },
                     {
-                        icon: 'mdi-application',
+                        icon: mdiApplication,
                         title: 'Heroku',
                         to: '/heroku',
                     },
                     {
-                        icon: 'mdi-heart',
+                        icon: mdiHeart,
                         title: 'About Developer',
                         to: '/aboutDeveloper',
                     }
