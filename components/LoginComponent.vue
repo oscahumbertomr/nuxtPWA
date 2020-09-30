@@ -175,7 +175,3 @@
 
     }
 </script>
-
-<style scoped>
-
-</style>

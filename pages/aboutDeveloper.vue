@@ -94,7 +94,7 @@
                       :empty-icon="mdiStarOutline"
                       :full-icon="mdiStar"
                       readonly
-                      :size="25"
+                      :size="40"
                       color="#EF5350"
                       background-color="grey lighten-1"
                     ></v-rating>

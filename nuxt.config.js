@@ -26,7 +26,7 @@ export default {
     ** Global CSS
     */
     css: [
-        '@/assets/styles/mian.css'
+        '~/assets/styles/mian.css'
     ],
     transition: {
         name: 'component-fade',
@@ -36,18 +36,18 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        {
+        /*{
             src: '~/plugins/sw.js',
             ssr: false
-        },
+        },*/
         {
             src: '~/plugins/axiosConfig.js',
             ssr: false
         },
-        {
+       /* {
             src: '@/plugins/aosPlugin.js',
             ssr: false
-        },
+        },*/
         '~/plugins/mixins/userPlugin.js',
 
         /* {
