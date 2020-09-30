@@ -5,10 +5,10 @@
         Progressive web app
       </h1>
     </v-col>
-    <v-col cols="12" xs="11" sm="12" md="12">
-      <h4 class="subheading text-center">
+    <v-col cols="12" xs="11" sm="12" md="12" class="py-0">
+      <p class="heading text-center">
         This page was made whit Nuxt, Vuetify and Laravel
-      </h4>
+      </p>
     </v-col>
     <v-col xs="11" sm="12" md="12">
       <v-parallax dark src="/cat.webp" style="min-height: 50vh; margin-top: 0">
@@ -19,13 +19,13 @@
             style="background-color: rgba(53, 73, 94, 0.64)"
           >
             <h1 class="display-1 font-weight-thin mb-4">PWA</h1>
-            <h4 class="subheading">
+            <p class="heading">
               Nuxt
               <v-icon color="#222345">{{ mdiHeart }}</v-icon>
               Vuetify
               <v-icon color="#222345">{{ mdiHeart }}</v-icon>
               Laravel
-            </h4>
+            </p>
             <v-btn outlined to="/aboutDeveloper"
               ><div class="text-h1">About Developer</div></v-btn
             >
@@ -36,32 +36,32 @@
     <v-col cols="12" c>
       <h1 class="display-1 font-weight-thin my-4">Nuxt:</h1>
     </v-col>
-    <v-col cols="12">
-      <h4 class="subheading">
+    <v-col cols="12" class="py-0">
+      <p class="heading">
         Provides de PWA environment, do request to Apis and transforms Vue
         components into HTML ans Js implementing SSR technology
-      </h4>
+      </p>
     </v-col>
     <v-col cols="12">
       <h1 class="display-1 font-weight-thin mb-4">Vuetify:</h1>
     </v-col>
-    <v-col cols="12">
-      <h4 class="subheading">
+    <v-col cols="12" class="py-0">
+      <p class="heading">
         Vuetify is a vuejs toolchain framework, provides components such as
         buttons, card, v-paralax ... etc
-      </h4>
+      </p>
     </v-col>
     <v-col cols="12">
       <h1 class="display-1 font-weight-thin mb-4">Laravel:</h1>
     </v-col>
-    <v-col cols="12">
-      <h4 class="subheading">
+    <v-col cols="12" class="py-0">
+      <p class="heading">
         Provides the backend solution, Laravel is a big framework whit a lot o
         tools ready to use
-      </h4>
+      </p>
     </v-col>
-    <v-col cols="12">
-      <h4 class="subheading">This project still growing</h4>
+    <v-col cols="12" class="py-0">
+      <p class="heading">This project still growing</p>
     </v-col>
   </v-row>
 </template>
